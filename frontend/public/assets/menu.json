@@ -1,0 +1,896 @@
+{
+  "food": [
+    {
+      "id": 1,
+      "name": "Nasi Telor Sambal",
+      "description": "Nasi dengan tambahan telur kribo, sambal and sayur.",
+      "price": 10000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": {
+        "rice": ["Nasi Putih", "Nasi Daun Jeruk"]
+      }
+    },
+    {
+      "id": 1,
+      "name": "Nasi Telor Cakalang",
+      "description": "Nasi dengan tambahan telur kribo, tumis cakalang and sayur.",
+      "price": 15000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": {
+        "rice": ["Nasi Putih", "Nasi Daun Jeruk"]
+      }
+    },
+    {
+      "id": 1,
+      "name": "Nasi Telor Cumi",
+      "description": "Nasi dengan tambahan telur kribo, tumis cumi and sayur.",
+      "price": 18000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": {
+        "rice": ["Nasi Putih", "Nasi Daun Jeruk"]
+      }
+    },
+    {
+      "id": 1,
+      "name": "Nasi Telor Daging",
+      "description": "Nasi dengan tambahan telur kribo, tumis sambal daging and sayur.",
+      "price": 20000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": true,
+      "options": {
+        "rice": ["Nasi Putih", "Nasi Daun Jeruk"]
+      }
+    },
+    {
+      "id": 1,
+      "name": "Nasi Lalapan",
+      "description": "Nasi putih dengan tambahan ayam goreng, tempe goreng and sayur lalapan.",
+      "price": 17000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": {
+        "rice": ["Nasi Putih", "Nasi Daun Jeruk"]
+      }
+    },
+    {
+      "id": 1,
+      "name": "Nasi Katsu",
+      "description": "Nasi putih dengan tambahan ayam katsu and saus katsu.",
+      "price": 17000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": true,
+      "options": {
+        "rice": ["Nasi Putih", "Nasi Daun Jeruk"]
+      }
+    },
+    {
+      "id": 1,
+      "name": "Noodle Kolagen Ori",
+      "description": "Noodles with collagen broth, milk and minced chicken.",
+      "price": 19000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": null
+    },
+    {
+      "id": 1,
+      "name": "Noodle Kolagen Beef",
+      "description": "Noodles with collagen broth, milk and beef slice.",
+      "price": 21000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": null
+    },
+    {
+      "id": 1,
+      "name": "Noodle Kolagen Charsiu",
+      "description": "Noodles with collagen broth, milk and chicken charsiu.",
+      "price": 21000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": null
+    },
+    {
+      "id": 1,
+      "name": "Noodle Kolagen Katsu",
+      "description": "Noodles with collagen broth, milk and chicken katsu.",
+      "price": 20000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": null
+    },
+    {
+      "id": 1,
+      "name": "Noodle Mala Ori",
+      "description": "Noodles with collagen broth, milk, chilli oil and minced chicken.",
+      "price": 20000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": true,
+      "options": {
+        "spicy_level": [1, 2, 3]
+      }
+    },
+    {
+      "id": 1,
+      "name": "Noodle Mala Beef",
+      "description": "Noodles with collagen broth, milk, chilli oil and beef slice.",
+      "price": 22000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": {
+        "spicy_level": [1, 2, 3]
+      }
+    },
+    {
+      "id": 1,
+      "name": "Noodle Mala Charsiu",
+      "description": "Noodles with collagen broth, milk, chilli oil and chicken charsiu.",
+      "price": 22000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": {
+        "spicy_level": [1, 2, 3]
+      }
+    },
+    {
+      "id": 1,
+      "name": "Noodle Mala Katsu",
+      "description": "Noodles with collagen broth, milk, chilli oil and chicken katsu.",
+      "price": 21000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": {
+        "spicy_level": [1, 2, 3]
+      }
+    },
+    {
+      "id": 1,
+      "name": "Chilli Oil Ori",
+      "description": "Noodles with chilli oil and minced chicken.",
+      "price": 13000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": true,
+      "options": {
+        "spicy_level": [1, 2, 3]
+      }
+    },
+    {
+      "id": 1,
+      "name": "Chilli Oil Beef",
+      "description": "Noodles with chilli oil and beef slice.",
+      "price": 21000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": {
+        "spicy_level": [1, 2, 3]
+      }
+    },
+    {
+      "id": 1,
+      "name": "Chilli Oil Charsiu",
+      "description": "Noodles with chilli oil and chicken charsiu.",
+      "price": 19000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": {
+        "spicy_level": [1, 2, 3]
+      }
+    },
+    {
+      "id": 1,
+      "name": "Chilli Oil Katsu",
+      "description": "Noodles with chilli oil and chicken katsu.",
+      "price": 16000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": {
+        "spicy_level": [1, 2, 3]
+      }
+    },
+    {
+      "id": 1,
+      "name": "Ayam Pedas Teras",
+      "description": "Nasi dengan ayam kuah pedas dimasak dengan santan, cabai rawit, bawang merah, bawang putih, jahe, lengkuas and serai.",
+      "price": 18000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": true,
+      "options": null
+    },
+    {
+      "id": 1,
+      "name": "Soto Ayam Teras",
+      "description": "Sup ayam dengan mie bihun, kol, tomat, telur and irisan ayam.",
+      "price": 12000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": null
+    },
+    {
+      "id": 1,
+      "name": "Indomie Goreng",
+      "description": null,
+      "price": 10000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": null
+    },
+    {
+      "id": 1,
+      "name": "Indomie Kuah",
+      "description": null,
+      "price": 10000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": null
+    },
+    {
+      "id": 1,
+      "name": "Indomie Goreng Special Teras JTI",
+      "description": null,
+      "price": 15000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": true,
+      "options": null
+    },
+    {
+      "id": 1,
+      "name": "Indomie Kuah Special Teras JTI",
+      "description": null,
+      "price": 15000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": true,
+      "options": null
+    },
+    {
+      "id": 1,
+      "name": "Nasi Goreng",
+      "description": "Nasi goreng sudah termasuk telur.",
+      "price": 15000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": true,
+      "options": {
+        "spicy": ["Pedas", "Tidak Pedas"]
+      }
+    }
+  ],
+  "coffee_based": [
+    {
+      "id": 2,
+      "name": "Americano",
+      "description": "Espresso and water.",
+      "price": 10000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": {
+        "topping": ["Vanilla Ice Cream"],
+        "topping_price": 4000
+      }
+    },
+    {
+      "id": 2,
+      "name": "Avocado Latte",
+      "description": "Espresso, condensed milk, uht milk and avocado powder.",
+      "price": 16000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": {
+        "topping": ["Vanilla Ice Cream"],
+        "topping_price": 4000
+      }
+    },
+    {
+      "id": 2,
+      "name": "Brown Sugar Latte",
+      "description": "Espresso, condensed milk, uht milk and brown sugar.",
+      "price": 17000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": {
+        "topping": ["Vanilla Ice Cream"],
+        "topping_price": 4000
+      }
+    },
+    {
+      "id": 2,
+      "name": "Butterscotch Latte",
+      "description": "Espresso, condensed milk, uht milk and syrup.",
+      "price": 17000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": {
+        "topping": ["Vanilla Ice Cream"],
+        "topping_price": 4000
+      }
+    },
+    {
+      "id": 2,
+      "name": "Cafe Latte",
+      "description": "Espresso and milk.",
+      "price": 16000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": {
+        "topping": ["Vanilla Ice Cream"],
+        "topping_price": 4000
+      }
+    },
+    {
+      "id": 2,
+      "name": "Cappucino",
+      "description": "Espresso, steamed milk and milk foam.",
+      "price": 16000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": {
+        "topping": ["Vanilla Ice Cream"],
+        "topping_price": 4000
+      }
+    },
+    {
+      "id": 2,
+      "name": "Caramel Latte",
+      "description": "Espresso, condensed milk, uht milk and syrup.",
+      "price": 17000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": {
+        "topping": ["Vanilla Ice Cream"],
+        "topping_price": 4000
+      }
+    },
+    {
+      "id": 2,
+      "name": "Coconut Latte",
+      "description": "Espresso, condensed milk, uht coconut and syrup.",
+      "price": 16000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": {
+        "topping": ["Vanilla Ice Cream"],
+        "topping_price": 4000
+      }
+    },
+    {
+      "id": 2,
+      "name": "Hazelnut Latte",
+      "description": "Espresso, condensed milk and uht milk.",
+      "price": 17000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": {
+        "topping": ["Vanilla Ice Cream"],
+        "topping_price": 4000
+      }
+    },
+    {
+      "id": 2,
+      "name": "Iced Latte",
+      "description": "Espresso, condensed milk and uht milk.",
+      "price": 16000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": {
+        "topping": ["Vanilla Ice Cream"],
+        "topping_price": 4000
+      }
+    },
+    {
+      "id": 2,
+      "name": "Tubruk",
+      "description": "Coffee powder, sugar and water.",
+      "price": 10000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": null
+    },
+    {
+      "id": 2,
+      "name": "Vanilla Latte",
+      "description": "Espresso, condensed milk, uht milk and syrup.",
+      "price": 16000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": {
+        "topping": ["Vanilla Ice Cream"],
+        "topping_price": 4000
+      }
+    }
+  ],
+  "milk_based": [
+    {
+      "id": 3,
+      "name": "Berry Choco",
+      "description": "Strawberry jam, blueberry jam, powder and water.",
+      "price": 15000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": {
+        "topping": ["Vanilla Ice Cream"],
+        "topping_price": 4000
+      }
+    },
+    {
+      "id": 3,
+      "name": "Choco Caramel",
+      "description": "Powder, condensed milk, syrup and water.",
+      "price": 15000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": {
+        "topping": ["Vanilla Ice Cream"],
+        "topping_price": 4000
+      }
+    },
+    {
+      "id": 3,
+      "name": "Choco Hazel",
+      "description": "Powder, condensed milk, syrup and water.",
+      "price": 15000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": {
+        "topping": ["Vanilla Ice Cream"],
+        "topping_price": 4000
+      }
+    },
+    {
+      "id": 3,
+      "name": "Chocolate",
+      "description": "Simple syrup, condensed milk, uht, powder and water.",
+      "price": 15000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": {
+        "topping": ["Vanilla Ice Cream"],
+        "topping_price": 4000
+      }
+    },
+    {
+      "id": 3,
+      "name": "Matcha",
+      "description": "Powder, condensed milk and uht.",
+      "price": 16000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": {
+        "topping": ["Vanilla Ice Cream"],
+        "topping_price": 4000
+      }
+    },
+    {
+      "id": 3,
+      "name": "Milky Berry",
+      "description": "Strawberry jam, blueberry jam, uht and yogurt.",
+      "price": 15000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": {
+        "topping": ["Vanilla Ice Cream"],
+        "topping_price": 4000
+      }
+    },
+    {
+      "id": 3,
+      "name": "Milky Mango",
+      "description": "Syrup and uht.",
+      "price": 14000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": {
+        "topping": ["Vanilla Ice Cream"],
+        "topping_price": 4000
+      }
+    },
+    {
+      "id": 3,
+      "name": "Milky Orange",
+      "description": "Syrup and uht.",
+      "price": 14000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": {
+        "topping": ["Vanilla Ice Cream"],
+        "topping_price": 4000
+      }
+    },
+    {
+      "id": 3,
+      "name": "Red Velvet",
+      "description": "Simple syrup, uht and powder.",
+      "price": 15000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": {
+        "topping": ["Vanilla Ice Cream"],
+        "topping_price": 4000
+      }
+    }
+  ],
+  "non_coffee": [
+    {
+      "id": 4,
+      "name": "Air Mineral Sedang",
+      "description": null,
+      "price": 4000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": null
+    },
+    {
+      "id": 4,
+      "name": "Air Mineral Kecil",
+      "description": null,
+      "price": 2500,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": null
+    },
+    {
+      "id": 4,
+      "name": "Happy Soda",
+      "description": "Syrup, condensed milk and soda.",
+      "price": 12000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": null
+    },
+    {
+      "id": 4,
+      "name": "Iced Tea",
+      "description": "Tea, simple syrup and water.",
+      "price": 7000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": null
+    },
+    {
+      "id": 4,
+      "name": "Lemon Tea",
+      "description": "Tea, syrup, simple syrup and water.",
+      "price": 11000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": null
+    },
+    {
+      "id": 4,
+      "name": "Lychee Tea",
+      "description": "Tea, syrup, simple syrup and water.",
+      "price": 11000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": null
+    },
+    {
+      "id": 4,
+      "name": "Lychee Squash",
+      "description": "Syrup, soda and water.",
+      "price": 13000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": null
+    },
+    {
+      "id": 4,
+      "name": "Mango Squash",
+      "description": "Syrup, soda and water.",
+      "price": 13000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": null
+    },
+    {
+      "id": 4,
+      "name": "Orange Squash",
+      "description": "Syrup, soda and water.",
+      "price": 13000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": null
+    },
+    {
+      "id": 4,
+      "name": "Strawberry Squash",
+      "description": "Syrup, soda, powder and water.",
+      "price": 13000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": null
+    },
+    {
+      "id": 4,
+      "name": "Mojito Ori",
+      "description": "Syrup and soda.",
+      "price": 12000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": null
+    },
+    {
+      "id": 4,
+      "name": "Mojito Leci",
+      "description": "Syrup and soda.",
+      "price": 12000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": null
+    },
+    {
+      "id": 4,
+      "name": "Mojito Strawberry",
+      "description": "Syrup and soda.",
+      "price": 14000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": null
+    },
+    {
+      "id": 4,
+      "name": "Sweet Mango Yakult",
+      "description": "Syrup, yakult and water.",
+      "price": 12000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": null
+    },
+    {
+      "id": 4,
+      "name": "Sweet Orange Yakult",
+      "description": "Syrup, yakult and water.",
+      "price": 12000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": null
+    }
+  ],
+  "pastry": [
+    {
+      "id": 5,
+      "name": "Bread Butter Pudding",
+      "description": null,
+      "price": 15000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": true,
+      "options": null
+    },
+    {
+      "id": 5,
+      "name": "Brownies Cheese Cake",
+      "description": null,
+      "price": 22000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": true,
+      "options": null
+    },
+    {
+      "id": 5,
+      "name": "Cheese Cake",
+      "description": null,
+      "price": 19000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": null
+    },
+    {
+      "id": 5,
+      "name": "Choux Cake",
+      "description": null,
+      "price": 13000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": null
+    },
+    {
+      "id": 5,
+      "name": "Dome",
+      "description": null,
+      "price": 15000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": null
+    },
+    {
+      "id": 5,
+      "name": "Danish Pastry",
+      "description": null,
+      "price": 12000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": null
+    },
+    {
+      "id": 5,
+      "name": "Garlic Bread",
+      "description": null,
+      "price": 13000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": true,
+      "options": null
+    },
+    {
+      "id": 5,
+      "name": "Mille Crepes",
+      "description": null,
+      "price": 15000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": true,
+      "options": null
+    },
+    {
+      "id": 5,
+      "name": "Slice Cake",
+      "description": null,
+      "price": 15000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": null
+    },
+    {
+      "id": 5,
+      "name": "Tartlet",
+      "description": null,
+      "price": 14000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": null
+    }
+  ],
+  "snack": [
+    {
+      "id": 6,
+      "name": "Kentang",
+      "description": null,
+      "price": 10000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": null
+    },
+    {
+      "id": 6,
+      "name": "Nugget",
+      "description": null,
+      "price": 12000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": null
+    },
+    {
+      "id": 6,
+      "name": "Tahu Isi",
+      "description": null,
+      "price": 10000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": null
+    },
+    {
+      "id": 6,
+      "name": "Sosis",
+      "description": null,
+      "price": 10000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": null
+    },
+    {
+      "id": 6,
+      "name": "Tela - Tela",
+      "description": "Balado",
+      "price": 10000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": null
+    },
+    {
+      "id": 6,
+      "name": "Tahu Crispy",
+      "description": "Balado",
+      "price": 12000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": null
+    }
+  ],
+  "etc": [
+    {
+      "id": 7,
+      "name": "Ice Cream Cemul",
+      "description": "Ice cream, bread and cereal.",
+      "price": 15000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": null
+    },
+    {
+      "id": 7,
+      "name": "Affogato",
+      "description": "Vanilla ice cream and espresso.",
+      "price": 16000,
+      "discount": null,
+      "is_new": false,
+      "is_recomended": false,
+      "options": null
+    }
+  ]
+}

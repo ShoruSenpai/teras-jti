@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+  /* dine in shadow */
+  /* very soft background layer */
+  --shadow-dinein-soft: 0 2px 6px rgba(15, 76, 117, 0.05), 0 1px 2px rgba(43, 179, 230, 0.05);
+
+  /* container / card default */
+  --shadow-dinein-card: 0 4px 12px rgba(15, 76, 117, 0.08), 0 2px 4px rgba(43, 179, 230, 0.06);
+
+  /* form inside container */
+  --shadow-dinein-inner:
+    inset 0 1px 2px rgba(15, 76, 117, 0.06), 0 1px 3px rgba(43, 179, 230, 0.05);
+
+  /* medium elevation */
+  --shadow-dinein-semi: 0 8px 20px rgba(15, 76, 117, 0.12), 0 4px 10px rgba(43, 179, 230, 0.08);
+
+  /* strong elevation */
+  --shadow-dinein-hard: 0 16px 40px rgba(15, 76, 117, 0.18), 0 6px 16px rgba(43, 179, 230, 0.12);
+
+  /* reservation shadow */
+  /* soft background */
+  --shadow-reservation-soft: 0 2px 6px rgba(92, 58, 33, 0.05), 0 1px 2px rgba(111, 78, 55, 0.05);
+
+  /* card */
+  --shadow-reservation-card: 0 4px 12px rgba(92, 58, 33, 0.08), 0 2px 4px rgba(111, 78, 55, 0.06);
+
+  /* form / inner container */
+  --shadow-reservation-inner:
+    inset 0 1px 2px rgba(92, 58, 33, 0.06), 0 1px 3px rgba(111, 78, 55, 0.05);
+
+  /* semi depth */
+  --shadow-reservation-semi: 0 8px 20px rgba(92, 58, 33, 0.12), 0 4px 10px rgba(111, 78, 55, 0.08);
+
+  /* hard elevation */
+  --shadow-reservation-hard: 0 16px 40px rgba(92, 58, 33, 0.18), 0 6px 16px rgba(111, 78, 55, 0.12);
+}

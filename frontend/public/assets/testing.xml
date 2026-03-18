@@ -1,0 +1,83 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="ERD">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10">
+      <root>
+
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- ENTITY session_token -->
+        <mxCell id="session" value="session_token" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="100" width="140" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="session_token_id" value="token_id (PK)" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="120" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="session_type" value="session_type" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="40" width="120" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- ENTITY order_token -->
+        <mxCell id="ordertoken" value="order_token" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="100" width="140" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- RELATIONSHIP -->
+        <mxCell id="rel1" value="has" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="290" y="105" width="100" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- LINES -->
+        <mxCell id="l1" edge="1" source="session" target="rel1" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="l2" edge="1" source="rel1" target="ordertoken" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- SECOND RELATION order_token -> order_history -->
+
+        <mxCell id="orderhistory" value="order_history" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="260" width="140" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="rel2" value="creates" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="290" y="260" width="100" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="l3" edge="1" source="ordertoken" target="rel2" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="l4" edge="1" source="rel2" target="orderhistory" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- MENU CATEGORY -->
+        <mxCell id="menucat" value="menu_category" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="420" width="140" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="menulist" value="menu_list" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="420" width="140" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="rel3" value="has" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="290" y="425" width="100" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="l5" edge="1" source="menucat" target="rel3" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="l6" edge="1" source="rel3" target="menulist" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

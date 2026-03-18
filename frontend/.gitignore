@@ -1,0 +1,125 @@
+# ========================
+
+# NODE / FRONTEND
+
+# ========================
+
+node_modules/
+dist/
+dist-ssr/
+.vite/
+coverage/
+*.tsbuildinfo
+*.timestamp-*-*.mjs
+
+# ========================
+
+# LOGS
+
+# ========================
+
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ========================
+
+# ENVIRONMENT
+
+# ========================
+
+.env
+.env.*
+*.local
+
+# ========================
+
+# OS FILES
+
+# ========================
+
+.DS_Store
+Thumbs.db
+
+# ========================
+
+# EDITOR / IDE
+
+# ========================
+
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ========================
+
+# CACHE
+
+# ========================
+
+.eslintcache
+.cache/
+.temp/
+
+# ========================
+
+# TESTING
+
+# ========================
+
+/cypress/videos/
+/cypress/screenshots/
+**screenshots**/
+
+# ========================
+
+# BUILD
+
+# ========================
+
+build/
+
+# ========================
+
+# PHP / BACKEND
+
+# ========================
+
+/vendor/
+composer.lock
+
+# ========================
+
+# LARAVEL (OPTIONAL)
+
+# ========================
+
+storage/*.key
+bootstrap/cache/*.php
+
+# ========================
+
+# UPLOADS
+
+# ========================
+
+uploads/
+public/uploads/
+
+# ========================
+
+# DATABASE
+
+# ========================
+
+*.sql
+*.sqlite

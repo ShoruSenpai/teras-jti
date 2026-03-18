@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+  /* solid colors */
+
+  /* dine in colors */
+  --color-primary-dinein: #2bb3e6;
+  --color-secondary-dinein: #1e88b5;
+  --color-accent-dinein: #0f4c75;
+
+  --color-primary-dinein-bg: #f4f9fc;
+  --color-secondary-dinein-bg: #eef6fa;
+  --color-primary-container-dinein-bg: #fafcff;
+
+  --color-on-primary-container: #fafcff;
+
+  --color-primary-dinein-card: #1e88b5;
+  --color-secondary-dinein-card: #0f4c75;
+
+  /* dine in colors */
+  --color-primary-reservation: #8b5e3c;
+  --color-secondary-reservation: #6f4e37;
+  --color-accent-reservation: #5c3a21;
+
+  --color-primary-reservation-bg: #f5efe8;
+  --color-secondary-reservation-bg: #ffffff;
+  --color-primary-container-reservation-bg: #f1e7dd;
+
+  --color-primary-reservation-card: #6f4e37;
+  --color-secondary-reservation-card: #5c3a21;
+}

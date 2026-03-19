@@ -19,11 +19,11 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 // import icon
-import { faMugHot, faChair } from "@fortawesome/free-solid-svg-icons";
+import { faMugHot, faChair, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 const app = createApp(App);
 
-library.add(faMugHot, faChair);
+library.add(faMugHot, faChair, faShoppingCart);
 
 app.use(createPinia());
 app.use(router);

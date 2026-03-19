@@ -11,7 +11,7 @@ export async function initSession(type) {
 
     const minute = type === "dinein" ? 30 : 360;
 
-    setCookie("session_token", token, session);
+    setCookie("session_token", token, minute);
   }
 
   const valid = await validateSession(token);

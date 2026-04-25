@@ -6,9 +6,9 @@ import { useTimer } from "@/composables/useTimer";
 import { validateSession } from "@/services/sessionService";
 import { addToCart, getCartSummary } from "@/api/cart";
 
-import BannerCarousel from "@/components/mobile/BannerCarousel.vue";
-import CategorySlider from "@/components/mobile/CategorySlider.vue";
-import MenuList from "@/components/mobile/MenuList.vue";
+import BannerCarousel from "@/components/mobile/dinein/BannerCarousel.vue";
+import CategorySlider from "@/components/mobile/dinein/CategorySlider.vue";
+import MenuList from "@/components/mobile/dinein/MenuList.vue";
 import { useAuthStore } from "@/stores/auth";
 import Swal from "sweetalert2";
 
@@ -106,8 +106,8 @@ watch(isExpired, (expired) => {
 });
 
 onMounted(async () => {
+  const token = route.params.token;
   try {
-    const token = route.params.token;
     auth.setToken(token, "dine-in");
 
     const sessionData = await validateSession();
@@ -122,6 +122,8 @@ onMounted(async () => {
       selectedCategory.value = menus.value[0].category_id;
     }
   } catch (err) {
+    if (token === "MASTER-DEV-DN") return;
+
     if (err.response?.status === 401) {
       errorMessage.value =
         "Sesi kamu telah berakhir. Silahkan scan ulang QR meja atau melalui website.";

@@ -13,7 +13,6 @@ onMounted(() => {
       text: "Sesi pemesanan kamu telah berakhir. Silahkan scan ulang QR atau melalui web ini.",
       icon: "warning",
       showConfirmButton: false,
-      timer: 5000,
       background: "#1e88b5",
       iconColor: "#f4f9fc",
       position: "top-end",

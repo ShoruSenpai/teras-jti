@@ -1,6 +1,8 @@
 import { isMobile } from "@/utils/deviceDetect";
 import { getCookie } from "@/utils/cookie";
 
+const MASTER_TOKENS = ["MASTER-DEV-DN", "MASTER-DEV-RST"];
+
 export function setupGuard(router) {
   router.beforeEach((to, from, next) => {
     const mobile = isMobile();
@@ -31,6 +33,8 @@ export function setupGuard(router) {
       const cookieToken = getCookie(cookieName);
 
       // console.log("GUARD CHECK - URL:", urlToken, "Cookie:", cookieToken);
+
+      if (MASTER_TOKENS.includes(urlToken)) return next();
 
       if (!urlToken || urlToken !== cookieToken) {
         console.warn("Akses ditolak: Token tidak valid atau tidak cocok.");

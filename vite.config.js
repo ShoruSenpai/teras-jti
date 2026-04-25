@@ -10,6 +10,7 @@ const ngrok = "0f23-2404-c0-3571-72da-c137-1ca7-4f7c-2519.ngrok-free.app";
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: "/",
   plugins: [vue(), vueDevTools(), tailwindcss()],
   server: {
     allowedHosts: [ngrok],

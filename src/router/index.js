@@ -1,13 +1,11 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import DesktopLayout from "@/layouts/DesktopLayout.vue";
-import MobileLayout from "@/layouts/MobileLayout.vue";
 import { setupGuard } from "./guards";
 
 const routes = [
   {
     path: "/",
-    component: MobileLayout,
+    component: () => import("@/layouts/MobileLayout.vue"),
     children: [
       // home
       {
@@ -69,7 +67,8 @@ const routes = [
         component: () => import("@/views/mobile/reservation/SelectDateView.vue"),
         meta: {
           title: "Teras JTI | Select Date Reservation",
-          requiresToken: true,
+          stepName: "Booking Tempat",
+          requiresToken: false,
         },
       },
     ],
@@ -77,7 +76,7 @@ const routes = [
 
   {
     path: "/desktop",
-    component: DesktopLayout,
+    component: () => import("@/layouts/DesktopLayout.vue"),
     children: [
       {
         name: "desktop home",

@@ -21,12 +21,28 @@ export function useTimer() {
         return;
       }
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minute = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const second = Math.floor((distance % (1000 * 60)) / 1000);
+      // Simpan pengali ke dalam variabel supaya kode lebih mudah dibaca
+      const msPerSecond = 1000;
+      const msPerMinute = msPerSecond * 60;
+      const msPerHour = msPerMinute * 60;
+      const msPerDay = msPerHour * 24;
+      const msPerMonth = msPerDay * 30; // Asumsi rata-rata 30 hari
+      const msPerYear = msPerDay * 365; // Asumsi 365 hari
 
-      if (days > 0) {
+      // Hitung masing-masing unit waktu
+      const years = Math.floor(distance / msPerYear);
+      const months = Math.floor((distance % msPerYear) / msPerMonth);
+      const days = Math.floor((distance % msPerMonth) / msPerDay);
+      const hours = Math.floor((distance % msPerDay) / msPerHour);
+      const minute = Math.floor((distance % msPerHour) / msPerMinute);
+      const second = Math.floor((distance % msPerMinute) / msPerSecond);
+
+      // Format tampilan berdasarkan sisa waktu
+      if (years > 0) {
+        timerLeft.value = `${years} thn ${months} bln ${days} hari ${hours.toString().padStart(2, "0")}:${minute.toString().padStart(2, "0")}:${second.toString().padStart(2, "0")}`;
+      } else if (months > 0) {
+        timerLeft.value = `${months} bln ${days} hari ${hours.toString().padStart(2, "0")}:${minute.toString().padStart(2, "0")}:${second.toString().padStart(2, "0")}`;
+      } else if (days > 0) {
         timerLeft.value = `${days} hari ${hours.toString().padStart(2, "0")}:${minute.toString().padStart(2, "0")}:${second.toString().padStart(2, "0")}`;
       } else if (hours > 0) {
         timerLeft.value = `${hours.toString().padStart(2, "0")}:${minute.toString().padStart(2, "0")}:${second.toString().padStart(2, "0")}`;

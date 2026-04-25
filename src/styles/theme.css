@@ -1,0 +1,114 @@
+/* =====================================================================
+   Teras JTI - Theme and Tailwind v4 Setup
+   ---------------------------------------------------------------------
+   PENTING saat customisasi:
+   - Seluruh token warna diletakkan di blok @theme agar otomatis menjadi
+     utility Tailwind seperti bg-primary-bg, text-primary-card, dll.
+   - Untuk mengganti palet, cukup ubah nilai variabel di bawah.
+   - Font default diset ke Quicksand melalui --font-sans sehingga
+     class seperti font-sans otomatis memakai Quicksand.
+   ===================================================================== */
+
+@import "tailwindcss";
+
+/* Source scanning - wajib untuk Tailwind v4 agar file .vue ikut dipindai. */
+@source "../**/*.vue";
+@source "../**/*.{js,ts}";
+@source "../../index.html";
+
+/* ------------------------------------------------------------------
+   Theme tokens (Tailwind v4 @theme directive).
+   Setiap variabel --color-xxx otomatis menjadi utility bg-xxx,
+   text-xxx, border-xxx, dll.
+   ------------------------------------------------------------------ */
+@theme {
+  /* Palet coklat Teras JTI (JANGAN pakai biru - biru dipakai app mobile order) */
+  --color-primary-bg: #f5ebe6;
+  --color-primary-container-1: #ffffff;
+  --color-primary-container-2: #eaddd7;
+  --color-primary-card: #8b5e3c;
+  --color-hover-card: #5c3a21;
+
+  /* Warna teks */
+  --color-text-dark: #2b1a10;
+  --color-text-muted: #6b4a36;
+
+  /* Font family - Quicksand diset sebagai sans default */
+  --font-sans: "Quicksand", ui-sans-serif, system-ui, sans-serif;
+  --font-quicksand: "Quicksand", ui-sans-serif, system-ui, sans-serif;
+
+  /* Easing lembut untuk micro-interaksi */
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ------------------------------------------------------------------
+   Base styles
+   ------------------------------------------------------------------ */
+/* html,
+body {
+  background-color: var(--color-primary-bg);
+  color: var(--color-text-dark);
+  font-family: var(--font-quicksand);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+} */
+
+/* Seleksi teks memakai warna brand */
+::selection {
+  background: var(--color-primary-card);
+  color: #fff;
+}
+
+/* Scrollbar halus bernuansa coklat */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-primary-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary-card);
+  border-radius: 9999px;
+  border: 2px solid var(--color-primary-bg);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-hover-card);
+}
+
+/* ------------------------------------------------------------------
+   Utility animations - dipakai beberapa section
+   ------------------------------------------------------------------ */
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.animate-float-soft {
+  animation: float-soft 6s var(--ease-smooth) infinite;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-up {
+  animation: fade-up 0.8s var(--ease-smooth) both;
+}
+
+/* Tekstur grain halus untuk kedalaman visual (opsional) */
+.bg-grain {
+  background-image: radial-gradient(rgba(92, 58, 33, 0.06) 1px, transparent 1px);
+  background-size: 4px 4px;
+}

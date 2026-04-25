@@ -18,7 +18,25 @@ import {
   faSpinner,
   faPenToSquare,
   faCheck,
+  faBars,
+  faCircleInfo,
+  faClock,
+  faCouch,
+  faEnvelope,
+  faGraduationCap,
+  faLeaf,
+  faMobileScreen,
+  faMugSaucer,
+  faPeopleGroup,
+  faPhone,
+  faQrcode,
+  faStar,
+  faStore,
+  faUsers,
+  faWifi,
 } from "@fortawesome/free-solid-svg-icons";
+
+import { faInstagram, faTiktok, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
 library.add(
   faMugHot,
@@ -37,6 +55,25 @@ library.add(
   faSpinner,
   faPenToSquare,
   faCheck,
+  faBars,
+  faCircleInfo,
+  faClock,
+  faCouch,
+  faEnvelope,
+  faGraduationCap,
+  faLeaf,
+  faMobileScreen,
+  faMugSaucer,
+  faPeopleGroup,
+  faPhone,
+  faQrcode,
+  faStar,
+  faStore,
+  faUsers,
+  faWifi,
+  faInstagram,
+  faTiktok,
+  faWhatsapp,
 );
 
 export default FontAwesomeIcon;

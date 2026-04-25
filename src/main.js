@@ -12,6 +12,7 @@ import "@/styles/main.css";
 import "@/styles/colors.css";
 import "@/styles/font.css";
 import "@/styles/shadow.css";
+import "@/styles/theme.css";
 
 const app = createApp(App);
 

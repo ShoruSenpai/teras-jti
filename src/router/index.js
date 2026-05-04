@@ -67,7 +67,7 @@ const routes = [
         component: () => import("@/views/mobile/reservation/SelectDateView.vue"),
         meta: {
           title: "Teras JTI | Select Date Reservation",
-          stepName: "Booking Tempat",
+          stepName: ["Booking Tempat"],
           requiresToken: false,
         },
       },

@@ -68,6 +68,28 @@ const routes = [
         meta: {
           title: "Teras JTI | Select Date Reservation",
           stepName: ["Booking Tempat"],
+          flow: ["reservation-date", "reservation-personal-data"],
+          requiresToken: false,
+        },
+      },
+      {
+        name: "reservation-personal-data",
+        path: "reservation/:token/select-date/personal-data",
+        component: () => import("@/views/mobile/reservation/PersonalDataView.vue"),
+        meta: {
+          title: "Teras JTI | Personal Data Reservation",
+          stepName: ["Booking Tempat", "Data Diri"],
+          flow: ["reservation-date", "reservation-personal-data"],
+          requiresToken: false,
+        },
+      },
+      {
+        name: "reservation-preorder-menu",
+        path: "reservation/:token/select-date/personal-data/pre-order",
+        component: () => import("@/views/mobile/reservation/PreOrderView.vue"),
+        meta: {
+          title: "Teras JTI | Pre-Order Menu",
+          stepName: ["Booking Tempat", "Data Diri", "Pre-Order"],
           requiresToken: false,
         },
       },

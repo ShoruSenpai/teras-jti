@@ -1,20 +1,18 @@
 <script setup>
 import StepHeader from "@/components/mobile/reservation/StepHeader.vue";
-import CalendarDays from "@/components/mobile/reservation/CalendarDays.vue";
 import StepNavView from "@/components/mobile/reservation/StepNavView.vue";
-
-import { useTimer } from "@/composables/useTimer";
-import { useRoute, useRouter } from "vue-router";
-import { ref, onMounted, watch } from "vue";
 import { validateSession } from "@/services/sessionService";
-import { useAuthStore } from "@/stores/auth";
 
-const { timerLeft, isExpired, startTimer } = useTimer();
+import { ref, onMounted, watch } from "vue";
+import { useRoute, useRouter } from "vue-router";
+import { useAuthStore } from "@/stores/auth";
+import { useTimer } from "@/composables/useTimer";
+
 const route = useRoute();
 const router = useRouter();
-const auth = useAuthStore();
-const isLoading = ref(false);
 const errorMessage = ref("");
+const auth = useAuthStore();
+const { timerLeft, isExpired, startTimer } = useTimer();
 
 watch(isExpired, (expired) => {
   if (expired) {
@@ -67,13 +65,10 @@ onMounted(async () => {
     <!-- breadcrumb -->
     <StepHeader />
 
-    <!-- calendar reservation -->
-    <div class="flex flex-col gap-12 items-center mt-12">
-      <h1 class="font-bold text-2xl text-accent-reservation">Pilih Tanggal Reservasi</h1>
-      <CalendarDays />
-    </div>
+    <!-- personal data form -->
+    <div></div>
 
     <!-- navigation -->
-    <StepNavView />
+    <StepNavView @triggerPopup="showModalPopup = true" />
   </div>
 </template>

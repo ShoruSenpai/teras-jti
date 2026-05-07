@@ -4,6 +4,7 @@ namespace App\Http\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * @property int $cart_id
@@ -19,6 +20,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Cart whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Cart whereSessionTokenId($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Cart whereUpdatedAt($value)
+ * @property-read \App\Http\Models\SessionToken $session
  * @mixin \Eloquent
  */
 class Cart extends Model
@@ -28,7 +30,7 @@ class Cart extends Model
     public $timestamps = false;
     protected $fillable = ['session_token_id', 'created_at', 'updated_at'];
 
-    public function items()
+    public function items(): HasMany
     {
         return $this->hasMany(CartItem::class, 'cart_id', 'cart_id');
     }

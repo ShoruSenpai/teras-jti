@@ -25,6 +25,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @method static \Illuminate\Database\Eloquent\Builder<static>|CartItem whereQty($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|CartItem whereSubtotal($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|CartItem whereVariantKey($value)
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Http\Models\CartItemOption> $options
+ * @property-read int|null $options_count
  * @mixin \Eloquent
  */
 class CartItem extends Model

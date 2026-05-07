@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\SessionController;
 use App\Http\Models\Menu;
 use Illuminate\Support\Facades\Route;
@@ -43,6 +44,22 @@ Route::middleware(['check.session'])->group(function () {
             Route::post('/add', [CartController::class, 'store']);
             Route::get('/summary', [CartController::class, 'getSummary']);
             Route::post('/update/{itemId}', [CartController::class, 'updateQty']);
+        });
+
+    Route::prefix('reservation')
+        ->middleware('throttle:reservation_handler')
+        ->group(function () {
+            // check table
+            Route::get('/month-availability', [
+                ReservationController::class,
+                'getMonthAvailability',
+            ]);
+            Route::get('/availability', [ReservationController::class, 'checkAvailability']);
+
+            // step by step
+            Route::post('/step-area', [ReservationController::class, 'storeStep1']);
+            Route::post('/step-personal-data', [ReservationController::class, 'storeStep2']);
+            Route::get('/summary', [ReservationController::class, 'calculateTotal']);
         });
 
     Route::post('/cart/checkout', [CartController::class, 'checkout'])->middleware(

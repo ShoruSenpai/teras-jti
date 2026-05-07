@@ -75,22 +75,22 @@ class SessionController extends Controller
             );
         }
 
-        // check operational (just if service type have operational time)
-        //        $now = now()->format('H:i:s');
-        //        if ($now < $settings->open_time || $now > $settings->close_time) {
-        //            return response()->json(
-        //                [
-        //                    'success' => false,
-        //                    'message' =>
-        //                        "Maaf layanan $type hanya tersedia pada jam " .
-        //                        substr($settings->open_time, 0, 5) .
-        //                        '-' .
-        //                        substr($settings->close_time, 0, 5) .
-        //                        ' WIB.',
-        //                ],
-        //                403,
-        //            );
-        //        }
+        //         check operational (just if service type have operational time)
+        $now = now()->format('H:i:s');
+        if ($now < $settings->open_time || $now > $settings->close_time) {
+            return response()->json(
+                [
+                    'success' => false,
+                    'message' =>
+                        "Maaf layanan $type hanya tersedia pada jam " .
+                        substr($settings->open_time, 0, 5) .
+                        '-' .
+                        substr($settings->close_time, 0, 5) .
+                        ' WIB.',
+                ],
+                403,
+            );
+        }
 
         // check geofencing
         if ($type === 'dine-in') {

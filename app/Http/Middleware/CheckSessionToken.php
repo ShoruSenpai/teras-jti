@@ -7,7 +7,7 @@ use DateTime;
 use PDO;
 use DateTimeImmutable;
 
-class AuthMiddleware
+class CheckSessionToken
 {
     public function __construct(private readonly PDO $db) {}
 
@@ -24,9 +24,7 @@ class AuthMiddleware
             );
         }
 
-        $stmt = $this->db->prepare(
-            "SELECT id, expired_at, ip_address FROM  session_token WHERE  token = :token AND status = 'active' LIMIT 1",
-        );
+        $stmt = $this->db->prepare("SELECT * FROM session_token WHERE token = :token AND status = 'active' LIMIT 1");
         $stmt->execute(["token" => $token]);
         $session = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -41,7 +39,7 @@ class AuthMiddleware
         ) {
             if ($session) {
                 $updateStmt = $this->db->prepare(
-                    "UPDATE session_token SET status = 'expired' WHERE id = :id",
+                    "UPDATE session_token SET status = 'expired' WHERE token_id = :id",
                 );
                 $updateStmt->execute(["id" => $session["id"]]);
             }
@@ -51,7 +49,7 @@ class AuthMiddleware
                 401,
             );
         }
-        return true;
+        return $session;
     }
 
     private function sendResponse(

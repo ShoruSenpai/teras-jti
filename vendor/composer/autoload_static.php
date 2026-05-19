@@ -18,10 +18,15 @@ class ComposerStaticInit44ce8c8d63487c28389d18de3069a9a3
             'Symfony\\Polyfill\\Php80\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Polyfill\\Ctype\\' => 23,
+            'SnapBi\\' => 7,
         ),
         'P' =>
         array (
             'PhpOption\\' => 10,
+        ),
+        'M' =>
+        array (
+            'Midtrans\\' => 9,
         ),
         'G' =>
         array (
@@ -50,9 +55,17 @@ class ComposerStaticInit44ce8c8d63487c28389d18de3069a9a3
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
+        'SnapBi\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/midtrans/midtrans-php/SnapBi',
+        ),
         'PhpOption\\' =>
         array (
             0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
+        ),
+        'Midtrans\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/midtrans/midtrans-php/Midtrans',
         ),
         'GrahamCampbell\\ResultType\\' =>
         array (

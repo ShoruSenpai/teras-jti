@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script type="module">
+      import { isMobile } from './src/utils/deviceDetect.js';
+      if (isMobile()) window.location.href = 'index.html';
+    </script>
+    <title>Teras JTI | Home</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script type="module" src="/src/desktop.js"></script>
+  </body>
+</html>

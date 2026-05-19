@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+@source "../**/*.js";
+@source "../../index.html";
+@source "../../desktop.html";
+
+@layer base {
+  @font-face {
+    font-family: 'Poppins';
+    src: url('/assets/fonts/Poppins-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url('/assets/fonts/Poppins-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url('/assets/fonts/Poppins-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url('/assets/fonts/Poppins-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url('/assets/fonts/Poppins-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url('/assets/fonts/Poppins-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url('/assets/fonts/Poppins-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url('/assets/fonts/Poppins-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url('/assets/fonts/Poppins-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Quicksand';
+    src: url('/assets/fonts/Quicksand-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Quicksand';
+    src: url('/assets/fonts/Quicksand-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Quicksand';
+    src: url('/assets/fonts/Quicksand-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Quicksand';
+    src: url('/assets/fonts/Quicksand-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Quicksand';
+    src: url('/assets/fonts/Quicksand-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+  }
+}
+
+@theme {
+  --color-primary-dinein: #2bb3e6;
+  --color-secondary-dinein: #1e88b5;
+  --color-accent-dinein: #0f4c75;
+
+  --color-primary-dinein-bg: #f4f9fc;
+  --color-secondary-dinein-bg: #eef6fa;
+  --color-primary-container-dinein-bg: #fafcff;
+
+  --color-on-primary-container: #fafcff;
+
+  --color-primary-dinein-card: #1e88b5;
+  --color-secondary-dinein-card: #0f4c75;
+
+  --color-primary-reservation: #8b5e3c;
+  --color-secondary-reservation: #6f4e37;
+  --color-accent-reservation: #5c3a21;
+
+  --color-primary-reservation-bg: #f5efe8;
+  --color-secondary-reservation-bg: #ffffff;
+  --color-primary-container-reservation-bg: #f1e7dd;
+
+  --color-primary-reservation-card: #6f4e37;
+  --color-secondary-reservation-card: #5c3a21;
+
+  /* font styling */
+  --font-poppins: 'Poppins';
+  --font-quicksand: 'Quicksand';
+
+    /* dine in shadow */
+  /* very soft background layer */
+  --shadow-dinein-soft:
+    0 2px 6px rgba(15, 76, 117, 0.05), 0 1px 2px rgba(43, 179, 230, 0.05);
+
+  /* container / card default */
+  --shadow-dinein-card:
+    0 4px 12px rgba(15, 76, 117, 0.08), 0 2px 4px rgba(43, 179, 230, 0.06);
+
+  /* form inside container */
+  --shadow-dinein-inner:
+    inset 0 1px 2px rgba(15, 76, 117, 0.06), 0 1px 3px rgba(43, 179, 230, 0.05);
+
+  /* medium elevation */
+  --shadow-dinein-semi:
+    0 8px 20px rgba(15, 76, 117, 0.12), 0 4px 10px rgba(43, 179, 230, 0.08);
+
+  /* strong elevation */
+  --shadow-dinein-hard:
+    0 16px 40px rgba(15, 76, 117, 0.18), 0 6px 16px rgba(43, 179, 230, 0.12);
+
+  /* reservation shadow */
+  /* soft background */
+  --shadow-reservation-soft:
+    0 2px 6px rgba(92, 58, 33, 0.05), 0 1px 2px rgba(111, 78, 55, 0.05);
+
+  /* card */
+  --shadow-reservation-card:
+    0 4px 12px rgba(92, 58, 33, 0.08), 0 2px 4px rgba(111, 78, 55, 0.06);
+
+  /* form / inner container */
+  --shadow-reservation-inner:
+    inset 0 1px 2px rgba(92, 58, 33, 0.06), 0 1px 3px rgba(111, 78, 55, 0.05);
+
+  /* semi depth */
+  --shadow-reservation-semi:
+    0 8px 20px rgba(92, 58, 33, 0.12), 0 4px 10px rgba(111, 78, 55, 0.08);
+
+  /* hard elevation */
+  --shadow-reservation-hard:
+    0 16px 40px rgba(92, 58, 33, 0.18), 0 6px 16px rgba(111, 78, 55, 0.12);
+
+}

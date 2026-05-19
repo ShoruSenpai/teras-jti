@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- <link rel="stylesheet" href="./src/styles/main.css" /> -->
+    <link rel="stylesheet" href="/test.css" />
+
+    <style>
+      body {
+        display: none;
+      }
+    </style>
+
+    <script type="module">
+      import { isMobile } from './src/utils/deviceDetect.js';
+      if (!isMobile()) {
+        window.location.href = 'desktop.html';
+      } else {
+        document.body.style.display = 'block';
+      }
+    </script>
+    <title>Teras JTI | Home</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

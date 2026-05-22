@@ -31,17 +31,20 @@ class SessionController extends Controller
 
             $now = new DateTimeImmutable();
 
+            // check days opened
             if ($type === 'dine-in' && $now->format('w') === '0') {
                 $this->json(['success' => false], 'Maaf, Teras JTI libur pada hari minggu. Sampai jumpa senin pagi!', 403);
                 return;
             }
 
+            // check active route
             if (!(bool)$settings['is_active']) {
                 $msg = $settings['custom_message'] ?: "Layanan $type sedang dinonaktifkan";
                 $this->json(['success' => false], $msg, 403);
                 return;
             }
 
+            // check maintenance time
             if (!empty($settings['closed_until'])) {
                 $closedUntil = new DateTimeImmutable($settings['closed_until']);
                 if ($now < $closedUntil) {
@@ -51,6 +54,7 @@ class SessionController extends Controller
                 }
             }
 
+            // check closed time
             $currentTimeStr = $now->format('H:i:s');
             if ($currentTimeStr < $settings['open_time'] || $currentTimeStr > $settings['close_time']) {
                 $open = substr($settings['open_time'], 0, 5);
@@ -59,6 +63,7 @@ class SessionController extends Controller
                 return;
             }
 
+            // check geofencing
             if ($type === 'dine-in') {
                 $userLat = isset($request['latitude']) ? (float)$request['latitude'] : null;
                 $userLong = isset($request['longitude']) ? (float)$request['longitude'] : null;
@@ -77,6 +82,8 @@ class SessionController extends Controller
             }
 
             $ip = $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0';
+//            $userLat = isset($request['latitude']) ? (float)$request['latitude'] : null;
+//            $userLong = isset($request['longitude']) ? (float)$request['longitude'] : null;
 
             try {
                 $this->db->beginTransaction();

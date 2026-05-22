@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 import tailwindvue from '@tailwindcss/vite';
 
-const ngrok = 'aa97-2001-448a-5130-7d38-2088-a60c-ef1d-b7af.ngrok-free.app';
+// ngrok http localhost:5175 --domain=sinkerless-horribly-felicity.ngrok-free.dev --host-header=localhost:5175
 
 export default defineConfig({
   plugins: [

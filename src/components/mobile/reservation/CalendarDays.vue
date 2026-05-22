@@ -1,7 +1,6 @@
 <script setup>
-import { ref, computed } from "vue";
-import { useRoute } from "vue-router";
-import axios from "axios";
+import { ref, computed, onMounted, watch } from "vue";
+import { getMonthAvailability } from "@/api/reservation";
 import {
   addMonths,
   subMonths,
@@ -14,10 +13,10 @@ import {
   eachDayOfInterval,
   format,
   startOfTomorrow,
+  isBefore,
 } from "date-fns";
 
 const emit = defineEmits(["select-date"]);
-const route = useRoute();
 
 const viewDate = ref(new Date());
 const today = new Date();
@@ -36,7 +35,27 @@ const isNextDisable = computed(() => {
 const fetchMonthData = async () => {
   isLoadingMonth.value = true;
   const monthStr = format(viewDate.value, "yyyy-MM");
+
+  try {
+    const res = await getMonthAvailability(monthStr);
+
+    if (res.success) {
+      monthAvailability.value = res.data;
+    }
+  } catch (err) {
+    console.error("Gagal memuat ketersediaan bulan:", err);
+  } finally {
+    isLoadingMonth.value = false;
+  }
 };
+
+onMounted(() => {
+  fetchMonthData();
+});
+
+watch(viewDate, () => {
+  fetchMonthData();
+});
 
 const handleNext = () => {
   if (!isNextDisable.value) viewDate.value = addMonths(viewDate.value, 1);
@@ -46,18 +65,30 @@ const handlePrev = () => {
   if (!isPrevDisable.value) viewDate.value = subMonths(viewDate.value, 1);
 };
 
+const openAreaPopup = (day) => {
+  emit("select-date", day.dateString);
+};
+
 const calendarDays = computed(() => {
   const start = startOfWeek(startOfMonth(viewDate.value), { weekStartsOn: 1 });
   const end = endOfWeek(endOfMonth(viewDate.value), { weekStartsOn: 1 });
   const days = eachDayOfInterval({ start, end });
 
-  return days.map((day) => ({
-    date: day,
-    dateString: format(day, "yyyy-MM-dd"),
-    isCurrentMonth: isSameMonth(day, viewDate.value),
-    isReserved: reservedDates.value.includes(format(day, "yyyy-MM-dd")),
-    isPast: day < today && !isSameMonth(day, today),
-  }));
+  return days.map((day) => {
+    const dateStr = format(day, "yyyy-MM-dd");
+    const backendData = monthAvailability.value[dateStr];
+
+    const isPastOrToday = isBefore(day, tomorow);
+    const isFull = backendData?.is_full || false;
+    const isCurrentMonth = isSameMonth(day, viewDate.value);
+    return {
+      date: day,
+      dateString: dateStr,
+      isCurrentMonth: isCurrentMonth,
+      isDisable: isPastOrToday || isFull || !isCurrentMonth,
+      isFull: isFull,
+    };
+  });
 });
 </script>
 
@@ -100,7 +131,7 @@ const calendarDays = computed(() => {
           v-for="day in calendarDays"
           :key="day.dateString"
           @click="openAreaPopup(day)"
-          :disabled="day.isReserved || !day.isCurrentMonth"
+          :disabled="day.isReserved"
           :class="[
             'aspect-square rounded-xl flex items-center justify-center font-semibold transition-all',
             day.isCurrentMonth

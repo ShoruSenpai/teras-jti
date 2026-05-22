@@ -1,11 +1,7 @@
 import apiClient from "@/services/apiClient";
 
-export async function getMenus(token) {
-  const res = await apiClient.get("/menus", {
-    headers: {
-      "X-Session-Token": token,
-    },
-  });
+export async function getMenus() {
+  const res = await apiClient.get("/menus");
 
   return res.data;
 }

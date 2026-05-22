@@ -2,7 +2,7 @@
 import { computed } from "vue";
 import { useRoute, useRouter } from "vue-router";
 
-const props = defineProps({
+defineProps({
   nextLabel: {
     type: String,
     default: "Next >",

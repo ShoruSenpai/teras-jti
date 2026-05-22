@@ -5,9 +5,9 @@ import StepHeader from "@/components/mobile/reservation/StepHeader.vue";
 import { ref, onMounted, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { getMenus } from "@/api/menuApi";
+import { addPreorderMenu, getReservationSummary } from "@/api/reservation";
 import { useTimer } from "@/composables/useTimer";
 import { validateSession } from "@/services/sessionService";
-import { addToCart, getCartSummary } from "@/api/cart";
 
 import Swal from "sweetalert2";
 
@@ -54,7 +54,7 @@ const executeAddToCart = async (menuId, options = []) => {
 
   isSubmiting.value = true;
   try {
-    await addToCart(menuId, options);
+    await addPreorderMenu(menuId, options);
 
     showModal.value = false;
     isLoading.value = true;
@@ -67,8 +67,9 @@ const executeAddToCart = async (menuId, options = []) => {
       text: err || "Gagal menambahkan pesanan.",
       showConfirmButton: false,
       iconColor: "#f4f9fc",
+      color: "#ffffff",
       background: "#6f4e37",
-      timer: 5000,
+      timer: false,
       position: "top",
     });
   } finally {
@@ -79,7 +80,7 @@ const executeAddToCart = async (menuId, options = []) => {
 
 const getCartPreview = async () => {
   try {
-    const res = await getCartSummary();
+    const res = await getReservationSummary();
 
     cartCount.value = res.total_items || 0;
     cartTotal.value = res.total_price || 0;
@@ -106,7 +107,7 @@ watch(isExpired, (expired) => {
 onMounted(async () => {
   const token = route.params.token;
   try {
-    const sessionData = await validateSession();
+    const sessionData = await validateSession(token);
 
     if (sessionData.success && sessionData.expired_at) {
       startTimer(sessionData.expired_at);
@@ -124,8 +125,7 @@ onMounted(async () => {
     if (token === "MASTER-DEV-RST") return;
 
     if (err.response?.status === 401) {
-      errorMessage.value =
-        "Sesi kamu telah berakhir. Silahkan scan ulang QR meja atau melalui website.";
+      errorMessage.value = "Sesi kamu telah berakhir. Silahkan mulai ulang sesi.";
       router.push({
         path: "/",
         query: {
@@ -133,7 +133,7 @@ onMounted(async () => {
         },
       });
     } else {
-      errorMessage.value = "Gagal memuat menu. Coba lagi nanti atau hubungi kasir.";
+      errorMessage.value = "Gagal memuat menu. Coba lagi nanti.";
     }
   }
 

@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted, computed, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import apiClient from "@/services/apiClient";
+import { checkoutCart, getCart, updateCartQty } from "@/api/cart";
 import { useTimer } from "@/composables/useTimer";
 import { validateSession } from "@/services/sessionService";
 import Swal from "sweetalert2";
@@ -18,13 +18,9 @@ const errorMessage = ref("");
 
 const fetchCart = async () => {
   try {
-    const res = await apiClient.get("/cart", {
-      headers: {
-        "X-Session-Token": token,
-      },
-    });
+    const res = await getCart();
 
-    cart.value = res.data;
+    cart.value = res;
   } catch (err) {
     console.error(err);
   } finally {
@@ -34,17 +30,8 @@ const fetchCart = async () => {
 
 const updateQty = async (itemId, action) => {
   try {
-    await apiClient.post(
-      `/cart/update/${itemId}`,
-      {
-        action,
-      },
-      {
-        headers: {
-          "X-Session-Token": token,
-        },
-      },
-    );
+    await updateCartQty(itemId, action);
+
     await fetchCart();
   } catch (err) {
     console.error(err);
@@ -64,24 +51,16 @@ const formatPrice = (price) => {
 const handleFinalCheckout = async () => {
   isProcessing.value = true;
   try {
-    const res = await apiClient.post(
-      "/cart/checkout",
-      {},
-      {
-        headers: {
-          "X-Session-Token": token,
-        },
-      },
-    );
+    const res = await checkoutCart();
 
-    if (res.data.success) {
+    if (res.success) {
       router.push({
         name: "dinein-qrcode",
         params: {
           token: token,
         },
         query: {
-          order_token: res.data.order_token,
+          order_token: res.order_token,
         },
       });
     }

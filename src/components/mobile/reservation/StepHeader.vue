@@ -16,7 +16,7 @@ const breadcrumbs = computed(() => {
     <div
       v-for="(step, index) in breadcrumbs"
       :key="index"
-      class="flex mt-4 items-center gap-2 text-xs"
+      class="flex mt-12 items-center gap-2 text-xs"
     >
       <span class="opacity-70">/</span>
       <span

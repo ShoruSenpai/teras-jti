@@ -3,6 +3,12 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
+
+// admin middleware
+use App\Http\Middleware\CheckAdminAuth;
+use App\Http\Middleware\CheckUserRole;
+
+// customer middleware
 use App\Http\Middleware\CheckSessionToken;
 
 return Application::configure(basePath: dirname(__DIR__))
@@ -15,6 +21,8 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->alias([
             'check.session' => CheckSessionToken::class,
+            'check.admin.auth' => CheckAdminAuth::class,
+            'role' => CheckUserRole::class,
         ]);
 
         $middleware->statefulApi();

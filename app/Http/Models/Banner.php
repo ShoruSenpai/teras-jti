@@ -24,18 +24,26 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Banner whereIsActive($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Banner whereLinkUrl($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Banner whereStartAt($value)
+ * @property string $banner_title
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Banner whereBannerTitle($value)
+ * @property string|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Banner whereUpdatedAt($value)
  * @mixin \Eloquent
  */
 class Banner extends Model
 {
     protected $table = 'banner_carousel';
     protected $primaryKey = 'banner_id';
+    public $timestamps = false;
     protected $fillable = [
         'image_url',
         'link_url',
+        'banner_title',
         'start_at',
         'end_at',
         'display_order',
         'is_active',
+        'created_at',
+        'updated_at',
     ];
 }

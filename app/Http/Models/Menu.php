@@ -43,6 +43,7 @@ class Menu extends Model
 {
     protected $table = 'menu_list';
     protected $primaryKey = 'menu_id';
+    public $timestamps = false;
     protected $fillable = [
         'category_id',
         'menu_name',
@@ -53,6 +54,8 @@ class Menu extends Model
         'is_new',
         'is_recommended',
         'status',
+        'created_at',
+        'updated_at',
     ];
 
     public function category(): BelongsTo

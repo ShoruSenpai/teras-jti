@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Customer;
 
+use App\Http\Controllers\Controller;
 use App\Http\Models\OrderToken;
 use App\Http\Models\SessionToken;
 use Carbon\Carbon;
@@ -75,7 +76,7 @@ class SessionController extends Controller
             );
         }
 
-        //         check operational (just if service type have operational time)
+        // check operational (just if service type have operational time)
         $now = now()->format('H:i:s');
         if ($now < $settings->open_time || $now > $settings->close_time) {
             return response()->json(

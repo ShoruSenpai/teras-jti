@@ -3,6 +3,8 @@
 namespace App\Http\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * @property int $reservation_menu_id
@@ -20,11 +22,35 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder<static>|ReservationMenu whereReservationId($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|ReservationMenu whereReservationMenuId($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|ReservationMenu whereSubtotal($value)
+ * @property-read \App\Http\Models\Menu $menu
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Http\Models\ReservationMenuOption> $options
+ * @property-read int|null $options_count
+ * @property-read \App\Http\Models\Reservation $reservation
  * @mixin \Eloquent
  */
 class ReservationMenu extends Model
 {
     protected $table = 'reservation_menu';
-    protected $primarykey = 'reservation_menu_id';
-    protected $fillable = ['reservation_id', 'menu_id', 'menu_id', 'qty', 'price', 'subtotal'];
+    protected $primaryKey = 'reservation_menu_id';
+    protected $fillable = ['reservation_id', 'menu_id', 'qty', 'price', 'subtotal'];
+    public $timestamps = false;
+
+    public function reservation(): BelongsTo
+    {
+        return $this->belongsTo(Reservation::class, 'reservation_id', 'reservation_id');
+    }
+
+    public function menu(): BelongsTo
+    {
+        return $this->belongsTo(Menu::class, 'menu_id', 'menu_id');
+    }
+
+    public function options(): HasMany
+    {
+        return $this->hasMany(
+            ReservationMenuOption::class,
+            'reservation_menu_id',
+            'reservation_menu_id',
+        );
+    }
 }

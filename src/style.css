@@ -1,0 +1,84 @@
+@import 'tailwindcss';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom base styles */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Scrollbar customizations for a cleaner look */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+@theme {
+  /* --- Brand Colors (Terracotta & Earthy) --- */
+  --color-brand-50: #fdf4f2;
+  --color-brand-100: #fbe6e1;
+  --color-brand-200: #f8cfc7;
+  --color-brand-500: #d14d33; /* Warna Utama Logo & Button */
+  --color-brand-600: #b83d28;
+  --color-brand-700: #993322;
+
+  /* --- Neutral & Surface Colors --- */
+  --color-main: #f8fafc;    /* Background aplikasi */
+  --color-sidebar: #ffffff; /* Background sidebar */
+  --color-surface: #ffffff;    /* Card background */
+  --color-border-light: #f1f5f9;
+  --color-border-base: #e2e8f0;
+
+  /* --- Text Colors --- */
+  --color-text-title: #1e293b;  /* Judul besar & Angka */
+  --color-text-body: #64748b;   /* Deskripsi & Label */
+  --color-text-muted: #94a3b8;  /* Placeholder & Helper text */
+
+  /* --- Status Colors (Berdasarkan Badge di UI) --- */
+  /* Green / Completed / Available */
+  --color-status-success-bg: #ecfdf5;
+  --color-status-success-text: #10b981;
+
+  /* Orange / Pending / Warning */
+  --color-status-warning-bg: #fff7ed;
+  --color-status-warning-text: #f97316;
+
+  /* Red / Cancelled / Out of Stock */
+  --color-status-danger-bg: #fef2f2;
+  --color-status-danger-text: #ef4444;
+
+  /* Blue / Processing */
+  --color-status-info-bg: #eff6ff;
+  --color-status-info-text: #3b82f6;
+
+  /* Purple / Refunded */
+  --color-status-purple-bg: #f5f3ff;
+  --color-status-purple-text: #8b5cf6;
+
+  /* --- Shadows (Konsisten dengan Card & Popup) --- */
+  /* Shadow tipis untuk card */
+  --shadow-card: 0 2px 4px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.04);
+  
+  /* Shadow untuk popup/modal (seperti di receipt) */
+  --shadow-modal: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  
+  /* Shadow halus untuk tombol aktif */
+  --shadow-button: 0 4px 6px -1px rgba(209, 77, 51, 0.2);
+}
